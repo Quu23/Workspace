@@ -13,6 +13,7 @@ public class Mindsweepre {
         {WALL,MAPS,MAPS,MAPS,MAPS,WALL},
         {WALL,MAPS,MAPS,MAPS,MAPS,WALL},
         {WALL,WALL,WALL,WALL,WALL,WALL}};
+    //this arrays is stage(but is used 4 X 4 mas)that have number of  Boms that is surrunded 
     static int[][] mapNum = {
         {0,0,0,0,0,0},
         {0,0,0,0,0,0},
@@ -29,11 +30,11 @@ public class Mindsweepre {
         System.out.println("Number of Boms:"+bomNum);
         
         while(whereBom.size()<5){
-            mapsX = new java.util.Random().nextInt(4)+1;
-            mapsY = new java.util.Random().nextInt(4)+1;
-            if(!checkIsBom(mapsX, mapsY)){
+            mapsX = new java.util.Random().nextInt(4)+1;//this action decide  the place(mas) of Bom
+            mapsY = new java.util.Random().nextInt(4)+1;//same the above 
+            if(!checkIsBom(mapsX, mapsY)){// if place that is decide for Random don't have bom
                 maps[mapsX][mapsY] = BOM;
-                whereBom.add((mapsX*1000)+mapsY);
+                whereBom.add((mapsX*1000)+mapsY);//add bom's place 
             } 
         }
 
